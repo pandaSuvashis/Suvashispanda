@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Resets ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Theme Variables ── */
+:root,
+[data-theme="dark"] {
+  /* surfaces */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: rgba(255,255,255,0.04);
+  --bg-glass: rgba(255,255,255,0.06);
+  --border-glass: rgba(255,255,255,0.08);
+
+  /* text */
+  --text-primary: #f0f0f5;
+  --text-secondary: #a0a0b8;
+  --text-muted: #6b6b80;
+
+  /* accent */
+  --accent: #8b5cf6;
+  --accent-2: #06b6d4;
+  --accent-glow: rgba(139,92,246,0.35);
+
+  /* gradients */
+  --gradient-hero: linear-gradient(135deg, #0a0a0f 0%, #1a0a2e 40%, #0f172a 100%);
+  --gradient-accent: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  --gradient-card: linear-gradient(145deg, rgba(139,92,246,0.08), rgba(6,182,212,0.05));
+
+  /* misc */
+  --nav-bg: rgba(10,10,15,0.82);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 30px rgba(139,92,246,0.15);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8f9fc;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(0,0,0,0.03);
+  --bg-glass: rgba(255,255,255,0.7);
+  --border-glass: rgba(0,0,0,0.08);
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a6a;
+  --text-muted: #8888a0;
+  --accent: #7c3aed;
+  --accent-2: #0891b2;
+  --accent-glow: rgba(124,58,237,0.2);
+  --gradient-hero: linear-gradient(135deg, #f8f9fc 0%, #ede9fe 40%, #e0f2fe 100%);
+  --gradient-accent: linear-gradient(135deg, #7c3aed, #0891b2);
+  --gradient-card: linear-gradient(145deg, rgba(124,58,237,0.06), rgba(8,145,178,0.04));
+  --nav-bg: rgba(248,249,252,0.82);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.08);
+  --shadow-glow: 0 0 30px rgba(124,58,237,0.08);
+}
+
+/* ── Base ── */
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+/* ── Section containers ── */
+.section {
+  padding: 100px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 1000px;
+}
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+/* ── Glass card util ── */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius);
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--gradient-accent);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px var(--accent-glow);
+}
+.btn-primary:hover::before { opacity: 1; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-glass);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(139,92,246,0.1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .section { padding: 70px 16px; }
+}

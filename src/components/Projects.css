@@ -1,0 +1,125 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+.project-card {
+  padding: 32px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  perspective: 800px;
+}
+.project-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+.project-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+.project-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.tech-badge {
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(139,92,246,0.12);
+  color: var(--accent);
+  border: 1px solid rgba(139,92,246,0.2);
+}
+.project-links {
+  display: flex;
+  gap: 16px;
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.project-link:hover {
+  color: var(--accent);
+}
+
+/* Modal overlay */
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.project-modal {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.modal-close:hover { color: var(--accent); }
+.modal-emoji { font-size: 3rem; margin-bottom: 16px; }
+.project-modal h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+.modal-desc {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+.modal-details {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.modal-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

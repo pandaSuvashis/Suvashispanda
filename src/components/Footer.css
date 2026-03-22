@@ -1,0 +1,44 @@
+.footer {
+  border-top: 1px solid var(--border-glass);
+  padding: 40px 24px;
+  background: var(--bg-secondary);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.footer-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: default;
+}
+.footer-dot {
+  color: var(--accent-2);
+  -webkit-text-fill-color: var(--accent-2);
+}
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+.footer-social {
+  color: var(--text-muted);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+.footer-social:hover {
+  color: var(--accent);
+}
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

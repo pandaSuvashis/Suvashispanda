@@ -1,0 +1,105 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.contact-card {
+  padding: 28px;
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-glass);
+}
+.contact-row:last-child { border-bottom: none; }
+.contact-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 70px;
+}
+.contact-value {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.copy-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.contact-socials {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.social-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.social-contact-btn:hover {
+  color: var(--accent);
+}
+
+/* Form */
+.contact-form {
+  padding: 32px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
