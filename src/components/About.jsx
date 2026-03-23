@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
 import { aboutText } from '../data/content';
 import { FaCode, FaBrain, FaRocket } from 'react-icons/fa';
-import profileImg from '../assets/profile.jpg';
+import profileImg from '../assets/portimage.jpg';
 import './About.css';
 
 const highlights = [

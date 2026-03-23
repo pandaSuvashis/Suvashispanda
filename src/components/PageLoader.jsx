@@ -8,8 +8,8 @@ export default function PageLoader({ onComplete }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
-      setTimeout(onComplete, 600);
-    }, 1800);
+      setTimeout(onComplete, 400);
+    }, 800);
     return () => clearTimeout(timer);
   }, [onComplete]);
 

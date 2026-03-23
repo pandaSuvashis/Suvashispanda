@@ -49,13 +49,24 @@
   font-size: 28px;
 }
 
-/* Content */
-.hero-content {
+/* Inner layout */
+.hero-inner {
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: 0 24px;
-  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 0 48px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Content */
+.hero-content {
+  flex: 1;
+  text-align: left;
+  max-width: 600px;
 }
 .hero-greeting {
   font-size: 1.2rem;
@@ -66,7 +77,7 @@
 }
 .hero-name {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 16px;
@@ -88,7 +99,7 @@
   height: 42px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 40px;
 }
 .role-text {
@@ -104,8 +115,63 @@
 .hero-cta {
   display: flex;
   gap: 16px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+}
+
+/* Hero Image */
+.hero-image-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  opacity: 0.25;
+  filter: blur(30px);
+  animation: heroGlow 4s ease-in-out infinite alternate;
+}
+@keyframes heroGlow {
+  0% { opacity: 0.2; transform: scale(0.95); }
+  100% { opacity: 0.35; transform: scale(1.05); }
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(139, 92, 246, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    gap: 32px;
+    padding: 0 24px;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  .role-container {
+    justify-content: center;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+  .hero-image-wrapper {
+    width: 220px;
+    height: 220px;
+  }
 }
 
 /* Scroll indicator */

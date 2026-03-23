@@ -5,6 +5,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import {
   SiPython, SiReact, SiTensorflow, SiNodedotjs, SiPytorch, SiJavascript
 } from 'react-icons/si';
+import heroImg from '../assets/profile.jpg';
 import './Hero.css';
 
 const floatingIcons = [SiPython, SiReact, SiTensorflow, SiNodedotjs, SiPytorch, SiJavascript];
@@ -90,67 +91,80 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="hero-content">
-        <motion.p
-          className="hero-greeting"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Hello, World! 👋
-        </motion.p>
+      <div className="hero-inner">
+        <div className="hero-content">
+          <motion.p
+            className="hero-greeting"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Deno 👾
+          </motion.p>
 
-        <motion.h1
-          className="hero-name"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          I'm <span className="gradient-text">{personalInfo.name}</span>
-        </motion.h1>
+          <motion.h1
+            className="hero-name"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            I'm <span className="gradient-text">{personalInfo.name}</span>
+          </motion.h1>
 
-        <motion.p
-          className="hero-tagline"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          {personalInfo.heroTagline}
-        </motion.p>
+          <motion.p
+            className="hero-tagline"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            {personalInfo.heroTagline}
+          </motion.p>
 
-        {/* Role cycling */}
+          {/* Role cycling */}
+          <motion.div
+            className="role-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={roleIdx}
+                className="role-text"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                {roles[roleIdx]}
+              </motion.span>
+            </AnimatePresence>
+          </motion.div>
+
+          <motion.div
+            className="hero-cta"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
+          >
+            <a href="#projects" className="btn-primary">
+              View Projects <FaArrowRight size={14} />
+            </a>
+            <a href="#contact" className="btn-outline">
+              Contact Me
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Hero Image */}
         <motion.div
-          className="role-container"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          className="hero-image-wrapper"
+          initial={{ opacity: 0, scale: 0.8, x: 60 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
         >
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={roleIdx}
-              className="role-text"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-            >
-              {roles[roleIdx]}
-            </motion.span>
-          </AnimatePresence>
-        </motion.div>
-
-        <motion.div
-          className="hero-cta"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-        >
-          <a href="#projects" className="btn-primary">
-            View Projects <FaArrowRight size={14} />
-          </a>
-          <a href="#contact" className="btn-outline">
-            Contact Me
-          </a>
+          <div className="hero-image-glow" />
+          <img src={heroImg} alt={personalInfo.name} className="hero-image" />
         </motion.div>
       </div>
 
