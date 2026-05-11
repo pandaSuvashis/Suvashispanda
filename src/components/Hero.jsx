@@ -5,7 +5,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import {
   SiPython, SiReact, SiTensorflow, SiNodedotjs, SiPytorch, SiJavascript
 } from 'react-icons/si';
-import heroImg from '../assets/profile.jpg';
+import heroImg from '../assets/portimage.jpg';
 import './Hero.css';
 
 const floatingIcons = [SiPython, SiReact, SiTensorflow, SiNodedotjs, SiPytorch, SiJavascript];
