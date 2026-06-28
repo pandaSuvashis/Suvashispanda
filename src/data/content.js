@@ -3,8 +3,8 @@ import {
   FaHtml5, FaCss3Alt, FaDatabase, FaLinkedin, FaEnvelope, FaPhone
 } from 'react-icons/fa';
 import {
-  SiJavascript, SiTypescript, SiCplusplus, SiC,
-  SiTensorflow, SiPytorch, SiMongodb, SiPostgresql, SiFirebase,
+  SiJavascript, SiCplusplus,
+  SiTensorflow, SiPytorch, SiMongodb, SiMysql, SiFirebase,
   SiExpress, SiNextdotjs, SiFastapi, SiFlask
 } from 'react-icons/si';
 
@@ -31,9 +31,7 @@ export const skillCategories = [
     skills: [
       { name: 'Python', icon: FaPython, color: '#3776AB' },
       { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
-      { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
       { name: 'Java', icon: FaJava, color: '#ED8B00' },
-      { name: 'C', icon: SiC, color: '#A8B9CC' },
       { name: 'C++', icon: SiCplusplus, color: '#00599C' },
     ],
   },
@@ -42,12 +40,9 @@ export const skillCategories = [
     skills: [
       { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
       { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C' },
-      { name: 'Machine Learning', icon: null, color: '#00C9A7', label: 'ML' },
-      { name: 'Deep Learning', icon: null, color: '#8B5CF6', label: 'DL' },
       { name: 'GenAI / LLMs', icon: null, color: '#EC4899', label: 'AI' },
       { name: 'Agentic AI', icon: null, color: '#06B6D4', label: 'AG' },
       { name: 'Reinforcement Learning', icon: null, color: '#F59E0B', label: 'RL' },
-      { name: 'MLOps', icon: null, color: '#10B981', label: 'Op' },
     ],
   },
   {
@@ -72,7 +67,7 @@ export const skillCategories = [
     title: 'Database & Tools',
     skills: [
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-      { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
+      { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
       { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
       { name: 'Git', icon: FaGitAlt, color: '#F05032' },
       { name: 'GitHub', icon: FaGithub, color: '#FFFFFF' },
@@ -103,7 +98,7 @@ export const projects = [
     details:
       'Integrates Google Maps API with a FastAPI backend for real-time traffic analysis and fuel consumption optimization. Uses bio-inspired algorithms for multi objective route planning.',
     tech: ['Python', 'FastAPI', 'Google Maps API', 'ML', 'Ant Colony Optimization'],
-    github: '#',
+    github: 'https://github.com/pandaSuvashis/GreenRoute',
     live: '#',
   },
   {
@@ -118,14 +113,14 @@ export const projects = [
     live: '#',
   },
   {
-    title: 'Musify – AI Music Recommender',
-    emoji: '🎵',
+    title: 'Garbage Classification',
+    emoji: '♻️',
     description:
-      'Smart music recommendation system using cosine similarity to suggest tracks based on listening patterns and audio features.',
+      'AI-powered garbage classification system using OpenCV and deep learning to automatically categorize waste materials.',
     details:
-      'Built with a React frontend and Flask backend. Processes audio features to compute similarity scores and provides personalized playlist recommendations.',
-    tech: ['React', 'Flask', 'Python', 'Cosine Similarity', 'ML'],
-    github: '#',
+      'Built with computer vision techniques to identify and classify different types of garbage for proper recycling and waste management. Uses deep learning models for accurate real-time classification.',
+    tech: ['Python', 'OpenCV', 'Deep Learning', 'Computer Vision'],
+    github: 'https://github.com/pandaSuvashis/garbage_classification',
     live: '#',
   },
 ];

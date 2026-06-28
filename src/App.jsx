@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 import PageLoader from './components/PageLoader';
+import SplashCursor from './components/SplashCursor';
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <>
       {!loaded && <PageLoader onComplete={onLoadComplete} />}
+      <SplashCursor />
       <ScrollProgress />
       <Navbar />
       <main>
