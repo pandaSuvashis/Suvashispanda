@@ -6,7 +6,7 @@ import profileImg from '../assets/hero2.jpg';
 import './About.css';
 
 const highlights = [
-  { icon: FaBrain, title: 'AI / ML', desc: 'Deep Learning, GenAI, LLMs, Reinforcement Learning' },
+  { icon: FaBrain, title: 'AI - ML', desc: 'Deep Learning, GenAI, LLMs, Reinforcement Learning' },
   { icon: FaCode, title: 'Full Stack', desc: 'MERN stack, REST APIs, scalable architectures' },
   { icon: FaRocket, title: 'Problem Solver', desc: 'Real-world impact through intelligent systems' },
 ];
