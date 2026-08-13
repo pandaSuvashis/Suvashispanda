@@ -27,10 +27,10 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Hackathon />
         <Skills />
         <Experience />
         <Projects />
-        <Hackathon />
         <Achievements />
         <Leadership />
         <Contact />
