@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { socialLinks, personalInfo } from '../data/content';
+import { socialLinks } from '../data/content';
 import './Footer.css';
 
 export default function Footer() {
@@ -29,9 +29,6 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="footer-copy">
-          © {new Date().getFullYear()} {personalInfo.name}. Crafted with passion.
-        </p>
       </div>
     </footer>
   );

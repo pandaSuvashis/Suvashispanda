@@ -46,7 +46,7 @@ export default function Projects() {
             }}
             onClick={() => setSelected(project)}
           >
-            <div className="project-emoji">{project.emoji}</div>
+            <div className="project-emoji" aria-hidden="true" />
             <h3 className="project-title">{project.title}</h3>
             <p className="project-desc">{project.description}</p>
             <div className="project-tech">
@@ -87,7 +87,7 @@ export default function Projects() {
               <button className="modal-close" onClick={() => setSelected(null)}>
                 <FiX size={20} />
               </button>
-              <div className="modal-emoji">{selected.emoji}</div>
+              <div className="modal-emoji" aria-hidden="true" />
               <h3>{selected.title}</h3>
               <p className="modal-desc">{selected.description}</p>
               <p className="modal-details">{selected.details}</p>

@@ -45,13 +45,9 @@ export default function Hackathon() {
         <div className="hackathon-layout">
           {/* Left — info */}
           <div className="hackathon-content">
-            <motion.div
-              className="trophy-wrap"
-              animate={{ rotateY: [0, 10, -10, 0], scale: [1, 1.05, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            >
+            <div className="trophy-wrap">
               <FaTrophy className="trophy-icon" />
-            </motion.div>
+            </div>
 
             <div className="hackathon-badge">🥇 1ST PLACE</div>
 

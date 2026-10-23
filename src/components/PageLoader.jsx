@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import './PageLoader.css';
 
@@ -8,8 +8,8 @@ export default function PageLoader({ onComplete }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
-      setTimeout(onComplete, 400);
-    }, 800);
+      setTimeout(onComplete, 350);
+    }, 1450);
     return () => clearTimeout(timer);
   }, [onComplete]);
 
@@ -19,27 +19,20 @@ export default function PageLoader({ onComplete }) {
         <motion.div
           className="page-loader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.1 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
         >
-          <motion.div
-            className="loader-content"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="loader-ring">
-              <div className="loader-ring-inner" />
+          <div className="loader-content" aria-label="Loading Suvashis Panda portfolio">
+            <div className="web-pull" aria-hidden="true">
+              <i className="web-strand strand-one" />
+              <i className="web-strand strand-two" />
+              <i className="web-strand strand-three" />
+              <i className="web-strand strand-four" />
+              <i className="web-knot" />
             </div>
-            <motion.h2
-              className="loader-name"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
-              SP
-            </motion.h2>
-          </motion.div>
+            <div className="loader-mark" aria-hidden="true">SP</div>
+            <p className="loader-caption">Loading portfolio</p>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

@@ -12,16 +12,14 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 import PageLoader from './components/PageLoader';
-import SplashCursor from './components/SplashCursor';
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
   const onLoadComplete = useCallback(() => setLoaded(true), []);
 
   return (
-    <>
+    <div className="app-shell min-h-screen">
       {!loaded && <PageLoader onComplete={onLoadComplete} />}
-      <SplashCursor />
       <ScrollProgress />
       <Navbar />
       <main>
@@ -36,6 +34,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
